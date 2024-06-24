@@ -4,24 +4,27 @@
  * 1, 2, 3, 5, 8, 13, 21, 34, 55, and 89
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million,
  * find the sum of the even-valued terms.
-*/
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main()
+{
 
 	int x = 1;
 	int y = 2;
 	int sum = 2;
 
-	while (y < 4e6) {
+	while (y < 4e6)
+	{
 
 		int z = x + y;
 		x = y;
 		y = z;
 
-		if (z % 2 == 0) {
+		if (z % 2 == 0)
+		{
 			sum += z;
 		}
 	}
