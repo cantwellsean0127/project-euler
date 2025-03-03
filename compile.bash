@@ -1,4 +1,4 @@
-	#!/bin/bash
+#!/bin/bash
 
 # Find all subdirectories and loop through them
 for dir in *; do
@@ -17,4 +17,3 @@ for dir in *; do
 
     fi
 done
-
