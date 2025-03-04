@@ -1,19 +1,11 @@
 #!/bin/bash
 
-# Find all subdirectories and loop through them
-for dir in *; do
+# Create a bin directory if it doesn't exist
+mkdir -p $(pwd)/bin
 
-    # Check if the directory contains a src directory
-    if [[ -d ./$dir/src ]]; then
+# Compile for Linux
+g++ $(pwd)/src/*.cpp -o $(pwd)/bin/linux.exe
 
-        # Create a bin directory if it doesn't exist
-        mkdir -p ./$dir/bin
+# Compile for Windows
+x86_64-w64-mingw32-g++ $(pwd)/src/*.cpp -o $(pwd)/bin/windows.exe
 
-        # Compile for Linux
-        g++ ./$dir/src/*.cpp -o ./$dir/bin/linux.exe
-
-        # Compile for Windows
-        x86_64-w64-mingw32-g++ ./$dir/src/*.cpp -o ./$dir/bin/windows.exe
-
-    fi
-done
